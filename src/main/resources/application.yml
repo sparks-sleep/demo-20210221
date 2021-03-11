@@ -1,0 +1,45 @@
+# debug: true
+# 端口
+server:
+  address: 127.0.0.1
+  port: 8086
+  connection-timeout: 5000
+  servlet:
+    context-path: /
+# spring配置
+spring:
+  # 环境 dev|test|prod
+  profiles:
+    active: dev
+  # http编码
+  http:
+    encoding:
+      charset: utf-8
+  # freemarker静态资源配置
+  # 设定ftl文件路径
+  freemarker:
+    tempalte-loader-path: classpath:/templates
+    #关闭缓存，及时刷新，上线生产环境需要修改为true
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    suffix: .ftl
+  # 模版配置
+  thymeleaf:
+    # 避免修改模版后还要重启
+    cache: false
+    # 模版路径，默认为templates（可忽略）
+    prefix: classpath:/templates/
+    # 检查模版位置（可忽略）
+    check-template-location: true
+    # 模版后缀，默认html（可忽略）
+    suffix: .html
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    # 模版模式
+    mode: HTML

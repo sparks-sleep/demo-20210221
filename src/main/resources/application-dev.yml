@@ -1,0 +1,5 @@
+## 端口
+server:
+  port: 8081
+  connection-timeout: 5000
+  context-path: /
